@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2011 9:36:10 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="pojo.Phieumuahang" table="phieumuahang" catalog="mualavuiweb">
+        <id name="idPhieuMuaHang" type="java.lang.Integer">
+            <column name="idPhieuMuaHang" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="nhacungcap" class="pojo.Nhacungcap" fetch="select">
+            <column name="idNhaCungCap" />
+        </many-to-one>
+        <many-to-one name="danhmuc" class="pojo.Danhmuc" fetch="select">
+            <column name="MaDanhMuc" />
+        </many-to-one>
+        <property name="tenPhieuHang" type="string">
+            <column name="TenPhieuHang" length="200" />
+        </property>
+        <property name="moTa" type="string">
+            <column name="MoTa" length="500" />
+        </property>
+        <property name="chiTiet" type="string">
+            <column name="ChiTiet" />
+        </property>
+        <property name="thoiGianBatDau" type="timestamp">
+            <column name="ThoiGianBatDau" length="19" />
+        </property>
+        <property name="thoiGianKetThuc" type="timestamp">
+            <column name="ThoiGianKetThuc" length="19" />
+        </property>
+        <property name="giaGoc" type="java.lang.Float">
+            <column name="GiaGoc" precision="12" scale="0" />
+        </property>
+        <property name="tietKiem" type="java.lang.Integer">
+            <column name="TietKiem" />
+        </property>
+        <property name="dieuKien" type="string">
+            <column name="DieuKien" />
+        </property>
+        <property name="hinhAnh" type="string">
+            <column name="HinhAnh" length="200" />
+        </property>
+        <property name="soLuong" type="java.lang.Integer">
+            <column name="SoLuong" />
+        </property>
+        <property name="tinhTrangPhieu" type="java.lang.Boolean">
+            <column name="TinhTrangPhieu" />
+        </property>
+        <property name="soLuongDaBan" type="java.lang.Integer">
+            <column name="SoLuongDaBan" />
+        </property>
+        <property name="deleted" type="java.lang.Integer">
+            <column name="Deleted" />
+        </property>
+        <set name="dondathangs" inverse="true">
+            <key>
+                <column name="idPhieuMuaHang" />
+            </key>
+            <one-to-many class="pojo.Dondathang" />
+        </set>
+    </class>
+</hibernate-mapping>

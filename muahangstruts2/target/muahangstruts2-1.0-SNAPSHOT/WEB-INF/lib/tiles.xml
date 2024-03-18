@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+	       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+	       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>	    
+    <definition name="TrangChu" template="/templates/Template.jsp">
+        <put-attribute name="title" value="3mua-Mua giá rẻ, trọn niềm vui" />
+        <put-attribute name="top" value="/pages/Banner.jsp" />
+        <put-attribute name="mainContent" value="/pages/TrangChuContent.jsp" />
+        <put-attribute name="rightContent" value="/pages/RightContent.jsp" />
+    </definition>
+    <definition name="DuLich" template="/templates/Template.jsp">
+        <put-attribute name="title" value="3mua-Mua giá rẻ, trọn niềm vui" />
+        <put-attribute name="top" value="/pages/Banner.jsp" />
+        <put-attribute name="mainContent" value="/pages/DuLichContent.jsp" />
+        <put-attribute name="rightContent" value="/pages/RightContent.jsp" />
+    </definition>
+    <definition name="ChiTietPhieu" template="/templates/Template.jsp">
+        <put-attribute name="title" value="3mua-Mua giá rẻ, trọn niềm vui" />
+        <put-attribute name="top" value="/pages/Banner.jsp" />
+        <put-attribute name="mainContent" value="/pages/ChiTietPhieuContent.jsp" />
+        <put-attribute name="rightContent" value="/pages/RightContent.jsp" />
+    </definition>
+    <definition name="DangKy" template="/templates/Template.jsp">
+        <put-attribute name="title" value="3mua-Mua giá rẻ, trọn niềm vui" />
+        <put-attribute name="top" value="/pages/Banner.jsp" />
+        <put-attribute name="mainContent" value="/pages/DangKyContent.jsp" />
+        <put-attribute name="rightContent" value="/pages/RightContent.jsp" />
+    </definition>
+    <definition name="ThongBao" template="/templates/Template.jsp">
+        <put-attribute name="title" value="3mua-Mua giá rẻ, trọn niềm vui" />
+        <put-attribute name="top" value="/pages/Banner.jsp" />
+        <put-attribute name="mainContent" value="/pages/ThongBaoContent.jsp" />
+        <put-attribute name="rightContent" value="/pages/RightContent.jsp" />
+    </definition>
+    <definition name="GioHang" template="/templates/Template.jsp">
+        <put-attribute name="title" value="3mua-Mua giá rẻ, trọn niềm vui" />
+        <put-attribute name="top" value="/pages/Banner.jsp" />
+        <put-attribute name="mainContent" value="/pages/GioHangContent.jsp" />
+        <put-attribute name="rightContent" value="/pages/RightContent.jsp" />
+    </definition>
+    <definition name="ThongTinKhachHang" template="/templates/Template.jsp">
+        <put-attribute name="title" value="3mua-Mua giá rẻ, trọn niềm vui" />
+        <put-attribute name="top" value="/pages/Banner.jsp" />
+        <put-attribute name="mainContent" value="/pages/ThongTinKhachHangContent.jsp" />
+        <put-attribute name="rightContent" value="/pages/RightContent.jsp" />
+    </definition>
+    <definition name="QuyChe" template="/templates/Template.jsp">
+        <put-attribute name="title" value="3mua-Mua giá rẻ, trọn niềm vui" />
+        <put-attribute name="top" value="/pages/Banner.jsp" />
+        <put-attribute name="mainContent" value="/pages/QuyCheContent.jsp" />
+        <put-attribute name="rightContent" value="/pages/RightContent.jsp" />
+    </definition>
+    <definition name="ListSanPhamAdmin" template="/templates/AdminTemplate.jsp">
+        <put-attribute name="mainContent" value="/pages/ListSanPhamAdminContent.jsp" />
+    </definition>
+    <definition name="ThemSanPhamAdmin" template="/templates/AdminTemplate.jsp">
+        <put-attribute name="mainContent" value="/pages/ThemSanPhamAdminContent.jsp" />
+    </definition> 
+    <definition name="DonDatHangAdmin" template="/templates/AdminTemplate.jsp">
+        <put-attribute name="mainContent" value="/pages/DonDatHangAdminContent.jsp" />
+    </definition>
+</tiles-definitions>

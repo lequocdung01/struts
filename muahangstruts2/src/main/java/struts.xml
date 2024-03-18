@@ -1,0 +1,38 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="TrangChu" class="action.TrangChuAction">
+            <result name="success">/TrangChu.jsp</result>
+        </action>
+        <action name="DangNhap" class="action.DangNhapAction">
+            <result name="success" type="redirect">TrangChu</result>
+            <result name="error">/ThongBao.jsp</result>
+        </action>
+        <action name="DangXuat" class="action.DangXuatAction">
+            <result name="success" type="redirect">TrangChu</result>
+        </action>
+        <action name="ChiTietPhieu" class="action.ChiTietPhieuAction">
+            <result name="success">/ChiTietPhieu.jsp</result>
+        </action>
+        <action name="GioHang" class="action.GioHangAction">
+            <result name="success">/GioHang.jsp</result>
+            <result name="input">/ThongBao.jsp</result>
+        </action>
+        <action name="DonDatHang" class="action.DonDatHangAction">
+            <result name="success">/ThongBao.jsp</result>
+        </action>
+        <action name="DuLich" class="action.DuLichAction">
+            <result name="success">/DuLich.jsp</result>
+        </action>
+        <action name="DangKy" class="action.DangKyAction">
+            <result name="success">/ThongBao.jsp</result>
+        </action>
+        <action name="DangNhap" class="action.DangNhapAction">
+            <result name="success">/ThongBao.jsp</result>
+        </action>
+    </package>
+</struts>

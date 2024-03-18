@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.devMode" value="true" />
+<constant name="struts.custom.i18n.resources"
+value="ApplicationResources" />
+<package name="photoshare" extends="struts-default">
+    
+    <result-types>
+            <result-type name="captcha" 
+                class="com.brainysoftware.captcha.CaptchaResult"
+            />
+        </result-types>
+   
+    
+	<action name="login">
+		<result>login.jsp</result>
+		<result name="input">login.jsp</result>
+	</action>
+	
+	<action name="loginprocess" class="control.actions.LoginAction" method="login">
+		<result name="success">loginsuccess.jsp</result>
+		<result name="input">login.jsp</result>
+	</action>
+	
+	<action name="logout" class="control.actions.LoginAction" method="logout">
+		<result name="success">home.jsp</result>
+	</action>
+	
+	<action name="profile" class="control.actions.ProfileAction">
+		<result name="success">profilesuccess.jsp</result>
+		<result name="error">profileerror.jsp</result>
+	</action>
+	
+	 
+   
+    <action name="viewuser" class="control.actions.ViewListUserAction" method="execute" >
+        <result name="success">viewlistmem.jsp</result>
+    </action>
+  
+    <action name="viewpicture" class="control.actions.ViewListPicture" method="execute">
+        
+        <result name="success">viewpicturemem.jsp</result>
+    </action>
+	
+	<action name="regist">
+	    <result>regist.jsp</result>
+	</action>
+
+	<action name="register" class="control.actions.RegistAction" method="execute">
+	    <param name="hashCookieName">hashCookie</param>
+	    <result name="success">registsuccess.jsp</result>
+	    <result name="error">registerror.jsp</result>
+	</action>
+	
+	<action name="GetCaptchaImage">
+            <result type="captcha">
+                <param name="hashCookieName">hashCookie</param>
+                <param name="wordLength">6</param>
+                <param name="imageWidth">90</param>
+                <param name="imageHeight">25</param>
+            </result>
+    </action>
+	
+		<action name="upload">
+			<result>/UploadFile.jsp</result>
+	</action>
+		<action name="UploadFile" class="control.actions.UploadFileAction">
+			<param name="filesPath">myfiles</param>
+			
+			<interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="execAndWait">
+                <param name="delay">10</param>
+            </interceptor-ref>
+            
+			<result name="wait">wait.jsp</result>
+            <result>UploadFileSuccess.jsp</result>
+            
+			<result name="success">/UploadFileSuccess.jsp</result>
+			<result name="input">/UploadFile.jsp</result>
+			
+			<interceptor-ref name="defaultStack">
+				<param name="fileUpload.maximumSize">10485760</param>
+				<param name="fileUpload.allowedTypes">text/plain,image/jpeg,image/pjpeg,image/png</param>
+			</interceptor-ref>
+
+		</action>
+		<action name="sendmail">
+		    <result>mailer.jsp</result>
+		</action>
+		<action name="emailer" class="control.actions.MailAction" method="execute">
+		    <result name="success">mailSuccess.jsp</result>
+		    <result name="error">mailError.jsp</result>
+		</action>
+		
+		<action name="searchpicture" class="control.actions.SearchAction">
+		    <result name="success"></result>
+		</action>
+		
+		<action name="addcomment" class="control.actions.AddCommentAction" method="addComment">
+		    <result name="success">addCommentsuccess.jsp</result>
+		</action>
+</package>
+</struts>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2011 9:36:10 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="pojo.Danhmuc" table="danhmuc" catalog="mualavuiweb">
+        <id name="idDanhMuc" type="java.lang.Integer">
+            <column name="idDanhMuc" />
+            <generator class="identity" />
+        </id>
+        <property name="tenDanhMuc" type="string">
+            <column name="TenDanhMuc" length="200" />
+        </property>
+        <set name="phieumuahangs" inverse="true">
+            <key>
+                <column name="MaDanhMuc" />
+            </key>
+            <one-to-many class="pojo.Phieumuahang" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2011 9:36:10 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="pojo.Dondathang" table="dondathang" catalog="mualavuiweb">
+        <id name="idDonDatHang" type="java.lang.Integer">
+            <column name="idDonDatHang" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="phieumuahang" class="pojo.Phieumuahang" fetch="select">
+            <column name="idPhieuMuaHang" />
+        </many-to-one>
+        <many-to-one name="khachhang" class="pojo.Khachhang" fetch="select">
+            <column name="idKhachHang" />
+        </many-to-one>
+        <many-to-one name="hinhthucmuahang" class="pojo.Hinhthucmuahang" fetch="select">
+            <column name="idHinhThucMuaHang" />
+        </many-to-one>
+        <many-to-one name="tinhtrangdondathang" class="pojo.Tinhtrangdondathang" fetch="select">
+            <column name="idTinhTrang" />
+        </many-to-one>
+        <property name="soLuong" type="java.lang.Integer">
+            <column name="SoLuong" />
+        </property>
+        <property name="thanhTien" type="java.lang.Float">
+            <column name="ThanhTien" precision="12" scale="0" />
+        </property>
+        <property name="tenNguoiNhan" type="string">
+            <column name="TenNguoiNhan" length="65535" />
+        </property>
+        <property name="diaChiNguoiNhan" type="string">
+            <column name="DiaChiNguoiNhan" length="65535" />
+        </property>
+        <property name="dienThoaiNguoiNhan" type="string">
+            <column name="DienThoaiNguoiNhan" length="65535" />
+        </property>
+        <property name="deleted" type="java.lang.Integer">
+            <column name="Deleted" />
+        </property>
+    </class>
+</hibernate-mapping>

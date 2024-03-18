@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2011 9:36:10 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="pojo.Khachhang" table="khachhang" catalog="mualavuiweb">
+        <id name="idKhachHang" type="java.lang.Integer">
+            <column name="idKhachHang" />
+            <generator class="identity" />
+        </id>
+        <property name="tenKhachHang" type="string">
+            <column name="TenKhachHang" length="65535" />
+        </property>
+        <property name="diaChi" type="string">
+            <column name="DiaChi" length="200" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="200" />
+        </property>
+        <property name="dienThoai" type="string">
+            <column name="DienThoai" length="45" />
+        </property>
+        <property name="matKhau" type="string">
+            <column name="MatKhau" length="45" />
+        </property>
+        <property name="taiKhoan" type="java.lang.Float">
+            <column name="TaiKhoan" precision="12" scale="0" />
+        </property>
+        <property name="hinhAnh" type="string">
+            <column name="HinhAnh" length="200" />
+        </property>
+        <property name="deleted" type="java.lang.Integer">
+            <column name="Deleted" />
+        </property>
+        <set name="dondathangs" inverse="true">
+            <key>
+                <column name="idKhachHang" />
+            </key>
+            <one-to-many class="pojo.Dondathang" />
+        </set>
+    </class>
+</hibernate-mapping>
